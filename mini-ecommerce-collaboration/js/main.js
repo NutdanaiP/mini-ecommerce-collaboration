@@ -70,8 +70,14 @@ document.addEventListener('DOMContentLoaded', () => {
      * ฟังการพิมพ์ในช่องค้นหาและกรองสินค้าตามคำที่พิมพ์
      */
     searchInput.addEventListener('keyup', () => {
-        // เอาค่าที่พิมพ์ในช่องค้นหามาแปลงเป็นตัวพิมพ์เล็กทั้งหมด
-        const searchTerm = searchInput.value.toLowerCase();
+        // เอาค่าที่พิมพ์ในช่องค้นหามาแปลงเป็นตัวพิมพ์เล็กและตัดช่องวางด้านหน้า/หลังออก
+        const searchTerm = searchInput.value.trim().toLowerCase();
+        
+        // ถ้าไม่มีคำค้นหา ให้แสดงสินค้าทั้งหมด
+        if (searchTerm === '') {
+            displayProducts(allProducts);
+            return;
+        }
         
         // กรองสินค้าที่มีชื่อตรงกับคำค้นหา
         const filteredProducts = allProducts.filter(product => {
