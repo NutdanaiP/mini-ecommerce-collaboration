@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Search Logic
+    // Search Logic ปรับปรุง logic 
     searchInput.addEventListener('keyup', () => {
         const searchTerm = searchInput.value.toLowerCase();
         const filteredProducts = allProducts.filter(product => {
