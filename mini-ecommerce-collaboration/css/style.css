@@ -35,7 +35,8 @@ input[type="text"] {
     
     text-align: center;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* เพิ่มระยะเวลา transition เป็น 0.5s เพื่อให้อนิเมชั่นช้าลง */
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 
 /* Hover Effect ที่คุณต้องการ */
